@@ -1,0 +1,71 @@
+site_name: BRO-ker Bot Docs
+site_description: Community and technical documentation for BRO-ker Bot
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home: index.md
+  - Start:
+      - Getting Started: getting-started.md
+      - User Guide: user-guide.md
+      - Commands: commands.md
+      - FAQ: faq.md
+  - Trading:
+      - Trading Flow: trading-flow.md
+      - Wallet and Custody: wallet-and-custody.md
+      - Limit Orders: limit-orders.md
+      - Copytrading: copytrading.md
+      - Charts and Analytics: charts-and-analytics.md
+      - Referrals: referrals.md
+  - Operators:
+      - Admin Guide: admin-guide.md
+      - Configuration: configuration.md
+      - Deployment: deployment.md
+      - Security: security.md
+      - Troubleshooting: troubleshooting.md
+  - Developers:
+      - Architecture: architecture.md
+      - Changelog: changelog.md
+

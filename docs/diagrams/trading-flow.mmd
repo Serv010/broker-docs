@@ -1,0 +1,13 @@
+flowchart TD
+    A[User opens token sheet] --> B[Choose buy or sell]
+    B --> C[Fetch live quote]
+    C --> D[Display route, slippage, output, warnings]
+    D --> E{Confirm trade?}
+    E -->|No| A
+    E -->|Yes| F[Prepare transaction]
+    F --> G[Sign with active wallet]
+    G --> H[Broadcast]
+    H --> I[Confirm]
+    I --> J[Record execution]
+    J --> K[Show result]
+

@@ -1,0 +1,12 @@
+flowchart TD
+    A[Source wallet activity] --> B[Event ingress]
+    B --> C[Normalize copytrade intent]
+    C --> D[Find enabled watchers]
+    D --> E[Apply settings and filters]
+    E --> F{Should copy?}
+    F -->|No| G[Record skipped reason]
+    F -->|Yes| H[Fetch quote]
+    H --> I[Execute copied trade]
+    I --> J[Record outcome]
+    J --> K[Notify user]
+

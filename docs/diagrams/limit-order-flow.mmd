@@ -1,0 +1,14 @@
+flowchart TD
+    A[Create order] --> B[Store target, side, size]
+    B --> C[Resolve trigger direction]
+    C --> D[Scanner checks fresh market data]
+    D --> E{Target reached?}
+    E -->|No| D
+    E -->|Yes| F[Claim order]
+    F --> G[Probe live route]
+    G --> H{Target output satisfied?}
+    H -->|No| I[Release and keep watching]
+    H -->|Yes| J[Create execution quote]
+    J --> K[Execute swap]
+    K --> L[Update order status]
+

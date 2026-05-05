@@ -1,0 +1,18 @@
+flowchart TB
+    TG[Telegram users] --> IN[Ingress]
+    IN --> Q[Durable job queue]
+    Q --> BW[Bot worker]
+    Q --> TW[Trade worker]
+    Q --> SW[Scheduler worker]
+    BW --> DB[(Database)]
+    TW --> DB
+    SW --> DB
+    BW --> UI[Telegram cards and buttons]
+    TW --> EX[Execution layer]
+    EX --> CU[Wallet custody]
+    EX --> JP[Jupiter provider]
+    EX --> HE[Helius provider]
+    BW --> CH[Charts and PnL]
+    IN --> CT[Copytrade ingress]
+    CT --> Q
+
