@@ -1,0 +1,14 @@
+*.py
+.env
+.env.*
+*.db
+*.sqlite
+*.pem
+*.key
+secrets/
+keys/
+__pycache__/
+.venv/
+site/
+node_modules/
+
